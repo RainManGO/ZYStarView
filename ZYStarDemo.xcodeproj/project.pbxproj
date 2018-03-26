@@ -12,6 +12,7 @@
 		EB74E6062068F0D800DD32AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB74E6042068F0D800DD32AA /* Main.storyboard */; };
 		EB74E6082068F0D800DD32AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB74E6072068F0D800DD32AA /* Assets.xcassets */; };
 		EB74E60B2068F0D800DD32AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB74E6092068F0D800DD32AA /* LaunchScreen.storyboard */; };
+		EB74E6142068F0FE00DD32AA /* ZYStarRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB74E6132068F0FE00DD32AA /* ZYStarRateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		EB74E6072068F0D800DD32AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB74E60A2068F0D800DD32AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB74E60C2068F0D800DD32AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB74E6132068F0FE00DD32AA /* ZYStarRateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYStarRateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		EB74E5FF2068F0D800DD32AA /* ZYStarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				EB74E6122068F0E700DD32AA /* Class */,
 				EB74E6002068F0D800DD32AA /* AppDelegate.swift */,
 				EB74E6022068F0D800DD32AA /* ViewController.swift */,
 				EB74E6042068F0D800DD32AA /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				EB74E60C2068F0D800DD32AA /* Info.plist */,
 			);
 			path = ZYStarDemo;
+			sourceTree = "<group>";
+		};
+		EB74E6122068F0E700DD32AA /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				EB74E6132068F0FE00DD32AA /* ZYStarRateView.swift */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB74E6032068F0D800DD32AA /* ViewController.swift in Sources */,
+				EB74E6142068F0FE00DD32AA /* ZYStarRateView.swift in Sources */,
 				EB74E6012068F0D800DD32AA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

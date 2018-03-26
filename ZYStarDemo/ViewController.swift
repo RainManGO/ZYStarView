@@ -10,9 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var starView: ZYStarRateView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        starView.selectStarUnit = .custom
+        starView.selectNumberOfStar = 5
     }
 
     override func didReceiveMemoryWarning() {
