@@ -26,10 +26,11 @@ print(current)
 
 XIB代码使用方法
 ==============
-![image](https://github.com/RainManGO/PlaceholderTextView/blob/master/xibUsage.png)
+灰常简单，如果只是显示不要回调不需要写代码。
+![image](https://github.com/RainManGO/ZYStarView/blob/master/2406D2E1-E0E9-4928-BA60-38A5EBBFAB9B.png)
 
 
 
 演示
 ==============
-![image](https://github.com/RainManGO/PlaceholderTextView/blob/master/demo.gif)
+![image](https://github.com/RainManGO/ZYStarView/blob/master/ZyStarView.gif)
