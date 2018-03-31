@@ -19,31 +19,162 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Izp-EN-dOP" customClass="ZYStarRateView" customModule="ZYStarDemo" customModuleProvider="target">
-                                <rect key="frame" x="41" y="317" width="293" height="33"/>
+                                <rect key="frame" x="41" y="382" width="293" height="33"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="293" id="e7F-QY-h2F"/>
-                                    <constraint firstAttribute="height" constant="33" id="fwE-5T-9wW"/>
+                                    <constraint firstAttribute="width" constant="293" id="WAA-Ii-4gm"/>
+                                    <constraint firstAttribute="height" constant="33" id="eHc-25-j9X"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="numberOfStar">
-                                        <integer key="value" value="8"/>
+                                        <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择星星的单位" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3l-qE-iXz">
+                                <rect key="frame" x="50" y="136" width="275" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="GsR-Fg-0G5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是否支持动画" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myH-IN-Fug">
+                                <rect key="frame" x="29" y="236" width="198" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="8Jn-68-aoQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是否支持点击" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IfE-YD-SQw">
+                                <rect key="frame" x="29" y="282" width="198" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="lKP-zZ-NDy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aS5-Sl-WbJ">
+                                <rect key="frame" x="50" y="174" width="275" height="29"/>
+                                <segments>
+                                    <segment title="一星"/>
+                                    <segment title="半星"/>
+                                    <segment title="随意小数"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentControlSelect:" destination="BYZ-38-t0r" eventType="valueChanged" id="x8v-Zx-fgq"/>
+                                </connections>
+                            </segmentedControl>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f4a-1k-zG1">
+                                <rect key="frame" x="310" y="231" width="51" height="31"/>
+                                <connections>
+                                    <action selector="isAnimationSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="DRn-UC-Agi"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cMk-xb-tD7">
+                                <rect key="frame" x="310" y="277" width="51" height="31"/>
+                                <connections>
+                                    <action selector="isTapSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="y0O-Co-gdd"/>
+                                </connections>
+                            </switch>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入个数" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DC3-eJ-pVq">
+                                <rect key="frame" x="266.5" y="82" width="92.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="mxa-II-2DL"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="JRc-m7-K5q"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总星数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhB-Ah-nVa">
+                                <rect key="frame" x="22" y="36" width="52" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="vuE-WC-d5h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入个数" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AC0-5C-bMK">
+                                <rect key="frame" x="266.5" y="36" width="92.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="nav-N1-Uyr"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mDG-7M-4hB"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前选中星数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reM-pS-SVg">
+                                <rect key="frame" x="22" y="84" width="104" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="v9X-x2-Kbf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Izp-EN-dOP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MNN-t4-uoK"/>
-                            <constraint firstItem="Izp-EN-dOP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dcq-h1-fjr"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qhB-Ah-nVa" secondAttribute="trailing" constant="20" symbolic="YES" id="0V4-G0-YgZ"/>
+                            <constraint firstItem="DC3-eJ-pVq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="6oU-Gv-tOW"/>
+                            <constraint firstItem="IfE-YD-SQw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="A2Y-Py-9Zw"/>
+                            <constraint firstItem="DC3-eJ-pVq" firstAttribute="top" secondItem="AC0-5C-bMK" secondAttribute="bottom" constant="16" id="DY4-BE-40T"/>
+                            <constraint firstItem="qhB-Ah-nVa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="Elg-fd-lU7"/>
+                            <constraint firstItem="Izp-EN-dOP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hr8-mT-QWV"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="reM-pS-SVg" secondAttribute="trailing" constant="20" symbolic="YES" id="IKG-Q3-4Gh"/>
+                            <constraint firstItem="B3l-qE-iXz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Jnx-Xe-SjI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B3l-qE-iXz" secondAttribute="trailing" constant="50" id="PnX-2q-TrB"/>
+                            <constraint firstItem="qhB-Ah-nVa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="PpW-Uk-9av"/>
+                            <constraint firstItem="f4a-1k-zG1" firstAttribute="top" secondItem="aS5-Sl-WbJ" secondAttribute="bottom" constant="29" id="Pre-sS-BU9"/>
+                            <constraint firstItem="reM-pS-SVg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="SFS-8Z-49j"/>
+                            <constraint firstItem="AC0-5C-bMK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="TZz-Yn-ka1"/>
+                            <constraint firstItem="cMk-xb-tD7" firstAttribute="leading" secondItem="IfE-YD-SQw" secondAttribute="trailing" constant="83" id="Tle-Bl-UEw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DC3-eJ-pVq" secondAttribute="trailing" constant="16" id="W3o-pl-bq0"/>
+                            <constraint firstItem="B3l-qE-iXz" firstAttribute="top" secondItem="DC3-eJ-pVq" secondAttribute="bottom" constant="24" id="XbF-WX-UV2"/>
+                            <constraint firstItem="aS5-Sl-WbJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="YfY-HT-1UB"/>
+                            <constraint firstItem="IfE-YD-SQw" firstAttribute="top" secondItem="myH-IN-Fug" secondAttribute="bottom" constant="25" id="ZFB-Nc-RXm"/>
+                            <constraint firstItem="myH-IN-Fug" firstAttribute="top" secondItem="aS5-Sl-WbJ" secondAttribute="bottom" constant="34" id="byt-HH-BVr"/>
+                            <constraint firstItem="AC0-5C-bMK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="gfA-UX-rle"/>
+                            <constraint firstItem="cMk-xb-tD7" firstAttribute="top" secondItem="f4a-1k-zG1" secondAttribute="bottom" constant="15" id="hXD-82-3ba"/>
+                            <constraint firstItem="Izp-EN-dOP" firstAttribute="top" secondItem="cMk-xb-tD7" secondAttribute="bottom" constant="74" id="jt4-5i-jbn"/>
+                            <constraint firstItem="myH-IN-Fug" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="lmc-i4-gCI"/>
+                            <constraint firstItem="aS5-Sl-WbJ" firstAttribute="top" secondItem="B3l-qE-iXz" secondAttribute="bottom" constant="17" id="mo8-RL-73E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cMk-xb-tD7" secondAttribute="trailing" constant="16" id="og3-bL-y1N"/>
+                            <constraint firstItem="f4a-1k-zG1" firstAttribute="leading" secondItem="myH-IN-Fug" secondAttribute="trailing" constant="83" id="oyx-LD-z3y"/>
+                            <constraint firstItem="reM-pS-SVg" firstAttribute="top" secondItem="qhB-Ah-nVa" secondAttribute="bottom" constant="27" id="pLU-Ef-hH1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AC0-5C-bMK" secondAttribute="trailing" constant="16" id="pRv-dN-p2E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aS5-Sl-WbJ" secondAttribute="trailing" constant="50" id="tFX-Xy-hre"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="f4a-1k-zG1" secondAttribute="trailing" constant="16" id="x03-wg-URL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="7bL-wN-BME" appends="YES" id="Lp1-BC-P0T"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="currentTextField" destination="DC3-eJ-pVq" id="H7T-Ig-JXc"/>
+                        <outlet property="starAllCountTextField" destination="AC0-5C-bMK" id="R9c-zf-1Cl"/>
                         <outlet property="starView" destination="Izp-EN-dOP" id="RIU-70-2iG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="7bL-wN-BME">
+                    <connections>
+                        <action selector="tapViewEedEditing:" destination="BYZ-38-t0r" id="e0k-Mr-rZ3"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="116" y="118.29085457271366"/>
         </scene>

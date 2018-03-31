@@ -28,12 +28,7 @@ class ZYStarRateView: UIView {
     //MARK:- 属性 支持xib Path
     
     //星星的总量,默认是5星
-    @objc var numberOfStar:UInt = 5{
-        didSet{
-            setupUI()
-        }
-    }
-    
+    @objc var numberOfStar:UInt = 5
     //当前选中的数量，默认不选中
     @objc var selectNumberOfStar:Float = 0{
         didSet{
@@ -51,30 +46,24 @@ class ZYStarRateView: UIView {
             if let currentStarBack = callback {
                 currentStarBack(selectNumberOfStar)
             }
-            
             layoutSubviews()
         }
     }
     //是否支持动画
-    @objc var isAnimation:Bool = true{
-        didSet{
-            setupUI()
-        }
-    }
+    @objc var isAnimation:Bool = true
+    //是否支持点击选择
+    @objc var isSupportTap:Bool = true
+    
     //回调函数
     public var callback:CountCompleteBackBlock?
     //选择单位 默认全选
-    var selectStarUnit:rateStyle = .all{
-        didSet{
-            setupUI()
-        }
-    }
+    var selectStarUnit:rateStyle = .all
     //背景view
-    var backgroundView:UIView!
+    fileprivate var backgroundView:UIView!
     //选择view
-    var foreView:UIView!
+    fileprivate var foreView:UIView!
     //星星的宽度
-    private var starWidth:CGFloat!
+    fileprivate var starWidth:CGFloat!
     
     
     //MARK:- veiw系统方法
@@ -93,7 +82,7 @@ class ZYStarRateView: UIView {
     ///   - rateStyle:选择单位 默认全选
     ///   - isAnimation: 是否支持动画
     convenience init(frame: CGRect,starCount:UInt?,currentStar:Float?,rateStyle:rateStyle?,isAnimation:Bool? = true,complete:@escaping CountCompleteBackBlock) {
-        self.init()
+        self.init(frame: frame)
         callback = complete
         numberOfStar = starCount ?? 5
         selectNumberOfStar = currentStar ?? 0
@@ -105,6 +94,10 @@ class ZYStarRateView: UIView {
     //xib使用初始化
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
         setupUI()
     }
     
@@ -122,14 +115,18 @@ class ZYStarRateView: UIView {
 //MARK:- UI
 extension ZYStarRateView{
     
+    
+    //重新设置属性刷新
+    func update() {
+        setupUI()
+    }
+    
     //UI初始化
-    func setupUI(){
+    fileprivate func setupUI(){
         
-        for view in self.subviews{
-            view.removeFromSuperview()
-        }
+        clearAll()
+        //星星宽度
         starWidth =  self.bounds.size.width/CGFloat(numberOfStar)
-        
         //背景view
         self.backgroundView = self.creatStarView(image: #imageLiteral(resourceName: "star_bg"))
         //选择view
@@ -138,14 +135,18 @@ extension ZYStarRateView{
         self.foreView.frame = CGRect(x: 0, y: 0, width: starWidth * CGFloat(selectNumberOfStar), height: self.bounds.size.height)
         self.addSubview(self.backgroundView)
         self.addSubview(self.foreView)
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(ZYStarRateView.tapStar(sender:)))
-        self.addGestureRecognizer(tap)
+        setTap()
     }
     
+   fileprivate func setTap() {
+        if isSupportTap {
+            let tap = UITapGestureRecognizer(target: self, action: #selector(ZYStarRateView.tapStar(sender:)))
+            self.addGestureRecognizer(tap)
+        }
+    }
     
     //创建StarView
-    func creatStarView(image:UIImage) -> UIView {
+    fileprivate func creatStarView(image:UIImage) -> UIView {
         
         let view =  UIView(frame:self.bounds)
         view.clipsToBounds = true
@@ -160,8 +161,22 @@ extension ZYStarRateView{
         
         return view
     }
+    
+    //清除所有视图和手势
+    func clearAll(){
+        
+        for view in self.subviews{
+            view.removeFromSuperview()
+        }
+        
+        if let taps = self.gestureRecognizers {
+            for tap in taps{
+                self.removeGestureRecognizer(tap)
+            }
+        }
+       
+    }
 }
-
 
 //MARK:- 事件
 extension ZYStarRateView{
