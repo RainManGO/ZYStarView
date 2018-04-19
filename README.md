@@ -34,3 +34,8 @@ XIB代码使用方法
 演示
 ==============
 ![image](https://github.com/RainManGO/ZYStarView/blob/master/ZyStarView.gif)
+
+
+更新
+==============
+修复xib 在 uitablewview 布局不准确问题
