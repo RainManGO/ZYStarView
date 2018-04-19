@@ -98,11 +98,11 @@ class ZYStarRateView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupUI()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        setupUI()
         let animationTimeInterval = isAnimation ? 0.2 : 0
         UIView.animate(withDuration: animationTimeInterval) {
             self.foreView.frame = CGRect(x: 0, y: 0, width: self.starWidth * CGFloat(self.selectNumberOfStar), height: self.bounds.size.height)
