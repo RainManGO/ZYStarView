@@ -18,7 +18,7 @@ XIb和纯代码均可使用（XIb体验极佳）
 Cocopods
 ==============
 ```
-   pod 'ZYStarView'
+     pod 'ZYStarView','~> 0.1.3'
 ```
 
 代码使用方法
