@@ -15,6 +15,12 @@ XIb和纯代码均可使用（XIb体验极佳）
 - **支持xib**: xib storyBoard 创建直接对应类即可.属性支持keyPath
 
 
+Cocopods
+==============
+```
+   pod 'ZYStarView'
+```
+
 代码使用方法
 ==============
 ```objc
