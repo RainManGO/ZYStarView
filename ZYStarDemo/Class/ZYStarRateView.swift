@@ -69,7 +69,7 @@ public class ZYStarRateView: UIView {
     //MARK:- veiw系统方法
 
     //系统代码初始化方法
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
@@ -81,7 +81,7 @@ public class ZYStarRateView: UIView {
     ///   - currentStar: 当前星星个数
     ///   - rateStyle:选择单位 默认全选
     ///   - isAnimation: 是否支持动画
-    convenience init(frame: CGRect,starCount:UInt?,currentStar:Float?,rateStyle:rateStyle?,isAnimation:Bool? = true,complete:@escaping CountCompleteBackBlock) {
+    public convenience init(frame: CGRect,starCount:UInt?,currentStar:Float?,rateStyle:rateStyle?,isAnimation:Bool? = true,complete:@escaping CountCompleteBackBlock) {
         self.init(frame: frame)
         callback = complete
         numberOfStar = starCount ?? 5
