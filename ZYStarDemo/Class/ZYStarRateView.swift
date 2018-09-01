@@ -28,9 +28,9 @@ class ZYStarRateView: UIView {
     //MARK:- 属性 支持xib Path
     
     //星星的总量,默认是5星
-    @objc var numberOfStar:UInt = 5
+    @objc public var numberOfStar:UInt = 5
     //当前选中的数量，默认不选中
-    @objc var selectNumberOfStar:Float = 0{
+    @objc public var selectNumberOfStar:Float = 0{
         didSet{
             //不重复刷新
             if oldValue == selectNumberOfStar {
@@ -50,14 +50,14 @@ class ZYStarRateView: UIView {
         }
     }
     //是否支持动画
-    @objc var isAnimation:Bool = true
+    @objc public var isAnimation:Bool = true
     //是否支持点击选择
-    @objc var isSupportTap:Bool = true
+    @objc public var isSupportTap:Bool = true
     
     //回调函数
     public var callback:CountCompleteBackBlock?
     //选择单位 默认全选
-    var selectStarUnit:rateStyle = .all
+    public var selectStarUnit:rateStyle = .all
     //背景view
     fileprivate var backgroundView:UIView!
     //选择view
@@ -117,7 +117,7 @@ extension ZYStarRateView{
     
     
     //重新设置属性刷新
-    func update() {
+    public func update() {
         setupUI()
     }
     
