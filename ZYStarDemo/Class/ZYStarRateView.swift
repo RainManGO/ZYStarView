@@ -23,7 +23,7 @@ enum rateStyle: Int {
 //计算显示完回调方法
 typealias CountCompleteBackBlock = (_ currentCount:Float)->(Void)
 
-class ZYStarRateView: UIView {
+public class ZYStarRateView: UIView {
     
     //MARK:- 属性 支持xib Path
     

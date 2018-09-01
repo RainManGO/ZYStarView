@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "ZYStarView"
-  spec.version      = "1.0"
+  spec.version      = "0.1.1"
   spec.swift_version = "4.1"
   spec.summary      = "Swift星星显示、简单易用，你需要的都能满足"
 
@@ -66,7 +66,7 @@ Swift星星显示、选择的封装 XIb和纯代码均可使用,支持星数设�
   #
 
   # spec.platform     = :ios
-  # spec.platform     = :ios, "5.0"
+  spec.platform     = :ios, "8.0"
 
   #  When using multiple platforms
   # spec.ios.deployment_target = "5.0"
