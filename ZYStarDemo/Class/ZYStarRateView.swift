@@ -14,14 +14,14 @@ import UIKit
 /// - all: 一星计算
 /// - half: 半星计算
 /// - custom: 随意
-enum rateStyle: Int {
+public enum rateStyle: Int {
     case  all     = 0
     case  half    = 1
     case  custom  = 2
 }
 
 //计算显示完回调方法
-typealias CountCompleteBackBlock = (_ currentCount:Float)->(Void)
+public typealias CountCompleteBackBlock = (_ currentCount:Float)->(Void)
 
 public class ZYStarRateView: UIView {
     
@@ -92,15 +92,15 @@ public class ZYStarRateView: UIView {
     }
     
     //xib使用初始化
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         setupUI()
         let animationTimeInterval = isAnimation ? 0.2 : 0
