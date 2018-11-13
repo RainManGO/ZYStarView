@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "ZYStarView"
-  spec.version      = "0.1.3"
+  spec.version      = "2.0"
   spec.swift_version = "4.1"
   spec.summary      = "Swift星星显示、简单易用，你需要的都能满足"
 
