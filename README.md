@@ -18,7 +18,7 @@ XIb和纯代码均可使用（XIb体验极佳）
 Cocopods
 ==============
 ```
-     pod 'ZYStarView','~> 0.1.4'
+     pod 'ZYStarView','~> 2.0'
 ```
 
 代码使用方法
@@ -44,4 +44,7 @@ XIB代码使用方法
 
 更新
 ==============
-修复xib 在 uitablewview 布局不准确问题
+
+2.0:使用@IBInspectable在xib中显示属性
+
+1.0：修复xib 在 uitablewview 布局不准确问题
