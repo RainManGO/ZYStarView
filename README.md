@@ -35,7 +35,7 @@ XIB代码使用方法
 灰常简单，如果只是显示不要回调不需要写代码。
 ![image](https://github.com/RainManGO/ZYStarView/blob/master/2406D2E1-E0E9-4928-BA60-38A5EBBFAB9B.png)
 
-
+2.0版之后，除了keypath，可以在xib修改属性
 
 演示
 ==============
